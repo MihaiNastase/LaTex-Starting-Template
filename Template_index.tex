@@ -1,0 +1,193 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+%for minted>>>>>
+\usepackage{xcolor}
+\usepackage{minted}
+\usemintedstyle{colorful}
+\usepackage{listings}
+\usepackage{color}
+
+%referencing >>>>>>>>
+\usepackage{csquotes}% Recommended
+\usepackage[english]{babel}
+\usepackage[maxbibnames=99, giveninits=true, sorting=none, style=authoryear-ibid,backend=biber, doi=false, isbn=false, eprint=false]{biblatex}
+\addbibresource{bibliography.bib}% Syntax for version >= 1.2
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+\citetrackerfalse
+%others >>>>>>>>
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[justification=centering]{caption}
+\usepackage[normalem]{ulem}
+\usepackage{longtable}
+\usepackage{comment}
+\usepackage[colorinlistoftodos, textwidth=2.8cm]{todonotes}
+\usepackage{array}
+\usepackage{soul}
+\usepackage{fancyhdr}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{zed-csp}
+\usepackage{geometry}
+%for links >>>>>>
+\usepackage[colorlinks]{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self},              % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+}
+\urlstyle{same}
+	
+\graphicspath{ {img/} }
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\title{Report title}
+\author{Mihai Valentin Nastase}
+\date{Month Year}
+
+\newcommand{\latex}{\LaTeX\ }
+\newcommand{\moduleName}{CMP0000 - Module Name} %Module name here
+\newcommand{\authorName}{Your name here}
+\newcommand{\authorID}{12345678}
+\newcommand{\reportTitle}{Report Title}
+\newcommand{\degreeAward}{BSc (Hons) in Computer and Data Science } 
+
+\begin{document}
+\DeclareGraphicsExtensions{.jpg,.png,.gif,.pdf,.jpeg}
+\begin{titlepage}
+   \begin{center}
+       \moduleName
+       \vspace*{0.5cm}
+
+       \huge\textbf{\reportTitle} 
+
+       \vspace{0.5cm}
+        Coursework Assignment Report
+            
+       \vspace{1.5cm}
+
+       \authorName \\
+       \authorID
+
+
+       \vfill
+            
+       \vspace{0.8cm}
+     
+       \begin{figure}[htp]
+        \centering
+        \includegraphics{logo}
+        \end{figure}
+            
+       \large{Faculty of Computing, Engineering and the Built Environment \\
+       Birmingham City University \\}
+            
+   \end{center}
+\end{titlepage}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width = 3.3cm]{header.jpg}}
+\lhead{\footnotesize BIRMINGHAM CITY UNIVERSITY \\ SCHOOL OF COMPUTING AND DIGITAL TECHNOLOGY}
+\rfoot{Page \thepage}
+\newgeometry{top=110pt}
+\setlength{\headsep}{50pt}
+
+\tableofcontents
+
+\listoftables
+
+\listoffigures
+
+\newpage
+
+\section*{Glossary}
+\begin{tabular}{l@{\hskip 1cm} p{10cm}}
+    \textbf{API}  & Application Programming Interface \\
+    \textbf{FCP}  & Fleet Composition Problem \\
+    \textbf{OR}  & Operational Research \\
+\end{tabular}
+
+\newpage
+
+
+
+\begin{abstract}
+    Summary of the entire report
+\end{abstract}
+
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+First and foremost, I would like to express my deep and sincere gratitude to my project supervisor, Prof...
+\end{abstract}
+
+\include{Sections/introduction}
+\include{Sections/section1}
+\include{Sections/conclusion}
+
+\include{Sections/appendix}
+
+\printbibliography
+\end{document}
+

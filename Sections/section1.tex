@@ -1,0 +1,81 @@
+\section{Section title}\label{section_label}
+This is an example on how to organise sections and subsections. I found it easier to break apart sections into their own .tex documents. Remember to use distinct labels, probably just the name of the actual section will do, so you can reference parts of your documents, like I did in Subsection~\ref{subsection}.
+Folder structure is obviously up to you, but keeping things tidy will help you big time when you'll tackle larger project (like your
+dissertation for example).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/author.jpg}
+    \caption{Author of this template - Portrait}
+    \label{fig:example}
+\end{figure}
+
+\subsection{Subsection}\label{subsection}
+One thing to keep in mind when using LaTex is that is a powerful tool for keeping track of references, either if we're talking of images (like you can see in Figure~\ref{fig:example}),
+tables (Table~\ref{tbl:vrp_var}) or the best of all, actual literature references \parencite{fletcher1995academic}. Seriously, BibTex is a God-sent, just plop stuff in the .bib file and let your manager library due the rest, as shown by \textcite{patashnik1984bibtex} (some formatting of these references may be required later, but this template is configured for the Harvard style). 
+
+\begin{longtable}[c]{|>{\raggedright}p{0.25\textwidth}|p{0.45\textwidth}|p{0.3\textwidth}|}
+ \caption{Variants of VRP \parencite{mihaivrp2022}. \label{tbl:vrp_var}}\\
+ \hline
+ \multicolumn{3}{| c |}{Start of Table \ref{tbl:vrp_var}}\\
+ \hline
+ Variation & Description & Examples in literature\\
+ \hline
+ \endfirsthead
+ \hline
+ \multicolumn{3}{|c|}{Continuation of Table \ref{tbl:vrp_var}}\\
+ \hline
+ Variation & Description & Examples in literature\\
+ \hline
+ \endhead
+
+ \hline
+ \endfoot
+
+ \hline
+ \multicolumn{3}{| c |}{End of Table \ref{tbl:vrp_var}}\\
+ \hline
+ \endlastfoot
+
+ VRP with Soft Time Windows (VRPSTW) & Requires each delivery to be delivered in a time interval. Violating the time windows is
+allowed, but associated with penalty costs. & \cite{iqbal2015solving}.\\
+ \hline
+ VRP with Hard Time Windows (VRPSTW)  & Requires each delivery to be delivered in a time interval. Violating the time windows is
+allowed, but associated with penalty costs. & \cite{miranda2016vehicle, zhang2017hybrid}.\\
+ \hline
+ VRP with Mixed Time Windows (VRPMTW)  & VRPTW variant which incorporates a  mix of soft and hard time windows. & \cite{mouthuy2015multistage}.\\
+ \hline
+ VRP with Pickup and Delivery (VRPPD)  & Implies that a number of goods needs
+to be moved from certain pickup locations to other delivery locations. & \cite{parragh2006survey}.\\
+ \hline
+ VRP with Backhauls (VRPB)  & VRPPD variant where goods also be transported from a delivery point to a pickup point, I.E. allowing customers to returns items to the vendor. & \cite{dominguez2016biased}.\\
+ \hline
+ VRP with Clustered Backhauls (VRPCB)  & VRPB variant in which all linehaul customers must be served between reaching backhaul customers. & \cite{tarantilis2013adaptive}.\\
+ \hline
+ VRP with Mixed Backhauls (VRPMB) & VRPB variant in which both linehaul and backhaul customers can be served regardless of order, the vehicle carrying goods for both designations. & \cite{wu2016label}.\\
+ \hline
+ VRP with Divisible Deliveries and Pickups (VRPDDP)  & VRPPD variant in which a single pickup and delivery order may be split between multiple vehicles. & \cite{nagy2015vehicle}.\\
+ \hline
+ VRP with Simultaneous Pickups and Deliveries (VRPSPD)  & VRPPD variant where a set of customers demand both pickup and delivery services. & \cite{avci2016hybrid}.\\
+ \hline
+ The Heterogeneous VRP (HVRP) & Variant which assumes the fleet vehicles have different capacities. & \cite{lai2016tabu}.\\
+ \hline
+ The Multi-depot VRP (MDVRP)  & Implies that a company may have multiple depots from which they can serve their customers. & \cite{montoya2015literature}.\\
+ \hline
+ The Periodic VRP (PVRP)  & Variant in which the classical VRP is generalized
+    by extending the planning horizon to several days and customers
+    may be visited more than once. & \cite{campbell2014forty}.\\
+ \hline
+ The Split-delivery VRP (SDVRP)  & Variant in which the orders of customers can be split and delivered with multiple vehicles by different routes. & \cite{silva2015iterated}.\\
+ \hline
+ The Stochastic VRP (SVRP)  &  It is the variant in which one or several
+components of the problem are random but follow a probability
+distribution. These components may include demand (VRPSD), customers (VRPSC), emands and customers (VRPSDC) and travel and service times (VRPSTS). & \cite{marinaki2016glowworm, miranda2016vehicle}.\\
+ \hline
+ The Open VRP (OVRP) & Assumes that vehicles do not necessarily return to the original depot after completing their delivery services, but if they do, they must visit the same customers in the reverse order. & \cite{marinakis2014bumble}.\\
+ \hline
+ The Time-dependent VRP (TDVRP) & In which times resulting from the variation of travel speeds are assumed to depend on the time of travel when planning vehicle routing & \cite{franceschetti2017metaheuristic}.\\
+ \hline
+ Green VRP (GVRP)  & A less common variant that concerns the reduction of fuel consumption and emissions. & \cite{lin2014survey}.\\
+ \hline
+ \end{longtable}
